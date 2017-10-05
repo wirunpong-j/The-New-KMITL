@@ -24,7 +24,6 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="lab.bellkung.thenewkmitl.FeedFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
@@ -40,7 +39,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.0"
-        tools:layout="@layout/fragment_other" />
+        android:name="layout.BlankFragment"
+        tools:layout="@layout/fragment_blank" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"

@@ -13,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         FragmentTransaction trans = getFragmentManager().beginTransaction();
-        trans.replace(R.id.mainFragment, new FeedFragment(), "trans");
+        trans.add(R.id.mainFragment, new FeedFragment(), "trans");
         trans.commit();
 
     }
