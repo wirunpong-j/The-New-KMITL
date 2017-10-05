@@ -5,6 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override
@@ -33,8 +39,10 @@ public class HomeActivity extends AppCompatActivity {
                 trans.commit();
                 break;
             case R.id.mapBtn:
-                trans.replace(R.id.mainFragment, new MapFragment(), "trans");
+                MapFragment mapFragment = new MapFragment();
+                trans.replace(R.id.mainFragment, mapFragment, "trans");
                 trans.commit();
+
                 break;
             case R.id.otherBtn:
                 trans.replace(R.id.mainFragment, new OtherFragment(), "trans");
