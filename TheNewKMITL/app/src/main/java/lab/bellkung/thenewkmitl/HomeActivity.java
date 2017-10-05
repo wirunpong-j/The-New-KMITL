@@ -1,6 +1,6 @@
 package lab.bellkung.thenewkmitl;
 
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,12 +13,14 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private FragmentTransaction trans;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        FragmentTransaction trans = getFragmentManager().beginTransaction();
+        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
         trans.add(R.id.mainFragment, new FeedFragment(), "trans");
         trans.commit();
 
@@ -27,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void btnPressed(View view) {
 
-        FragmentTransaction trans = getFragmentManager().beginTransaction();
+        trans = getSupportFragmentManager().beginTransaction();
 
         switch (view.getId()) {
             case R.id.feedBtn:
